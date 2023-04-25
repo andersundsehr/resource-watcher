@@ -1,5 +1,8 @@
 {
-    "name": "yosymfony/resource-watcher",
+    "name": "andersundsehr/resource-watcher",
+    "replace": {
+        "yosymfony/resource-watcher": "v3.0.0"
+    },
     "description": "A simple resource watcher using Symfony Finder",
     "keywords": [
         "resources",

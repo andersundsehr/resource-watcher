@@ -8,7 +8,7 @@ A simple resource watcher for getting changes of your filesystem.
 Use [Composer](http://getcomposer.org/) to install this package:
 
 ```bash
-composer require andersundsehr/resource-watcher
+composer require andersundsehr/resource-watcher:dev-master
 ```
 
 ## How to use?

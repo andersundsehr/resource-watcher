@@ -1,0 +1,21 @@
+name: PHP compatibility
+
+on: [push, pull_request]
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        php: ['7.1', '7.2', '7.3', '7.4', '8.0', '8.1', '8.2', '8.3', '8.4', '8.5']
+    steps:
+      - uses: actions/checkout@v6
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+      - run: composer install --no-interaction --no-progress
+      - run: composer validate --strict --no-check-publish
+      - run: composer check-platform-reqs
+      - run: composer audit --abandoned=report
+      - run: composer test
